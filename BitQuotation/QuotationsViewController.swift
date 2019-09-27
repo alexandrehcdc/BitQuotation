@@ -9,8 +9,11 @@ class QuotationsViewController: UIViewController {
        
         let useCase = InjectionUseCase.provideTransactionUseCase()
         
-        useCase.getTransactionDataBy(operation: .remote_only) { [unowned self] (response) in
-            self.createLineChart(transaction: response)
+        useCase.getTransactionDataBy(operation: .remote_only) {(response) in
+            DispatchQueue.main.sync { [unowned self] in
+                self.createLineChart(transaction: response)
+            }
+            
         }
         
     }
