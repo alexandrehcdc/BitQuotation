@@ -2,7 +2,7 @@ import Foundation
 
 struct TransactionRemoteDataSourceImpl: TransactionRemoteDataSource {
     
-    static func getTransactionalData(lang: LanguageIdentifierEnum, _ responseCallback: @escaping ((Transaction) -> Void)) {
+    func getTransactionalData(lang: LanguageIdentifierEnum, _ responseCallback: @escaping ((Transaction) -> Void)) {
         
         let url = URLBuilder()
                       .withMarketPrice()

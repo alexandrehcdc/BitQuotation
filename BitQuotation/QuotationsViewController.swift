@@ -7,25 +7,24 @@ class QuotationsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        TransactionRemoteDataSourceImpl.getTransactionalData(lang: .en) { (transaction) in
-            print(transaction)
-            
+        let useCase = InjectionUseCase.provideTransactionUseCase()
+        
+        useCase.getTransactionDataBy(operation: .remote_only) { [unowned self] (response) in
+            self.createLineChart(transaction: response)
         }
         
-        self.createLineChart()
     }
     
-    func createLineChart() {
+    func createLineChart(transaction: Transaction) {
         
         let chartView = LineChartView(frame: CGRect(x: 16,
                                                     y: 16,
                                                     width: self.view.frame.width - 32,
                                                     height: self.view.frame.height / 2))
-        
         self.view.addSubview(chartView)
         
-        let values = (0...20).map { i -> ChartDataEntry in
-            return ChartDataEntry(x: Double(i), y: 5)
+        let values = transaction.values.map { i -> ChartDataEntry in
+            return ChartDataEntry(x: Double(i.x), y: Double(i.y))
         }
         
         let set1 = LineChartDataSet(entries: values, label: "teste cansado")

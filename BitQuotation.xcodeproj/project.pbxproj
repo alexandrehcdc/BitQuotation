@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		01D22F16B4ED6F2216DB946F /* Pods_BitQuotation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BCFCD80769365E5FCA1BDFF /* Pods_BitQuotation.framework */; };
 		4504A4C0233DABE3009A95E2 /* InjectionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4504A4BF233DABE3009A95E2 /* InjectionUseCase.swift */; };
+		4504A4C2233DB41D009A95E2 /* TransactionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4504A4C1233DB41D009A95E2 /* TransactionUseCase.swift */; };
+		4504A4C5233EB9F3009A95E2 /* OperationTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4504A4C4233EB9F3009A95E2 /* OperationTypeEnum.swift */; };
 		455A22D8233D6BFB00B8C0EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455A22D7233D6BFB00B8C0EF /* AppDelegate.swift */; };
 		455A22DA233D6BFB00B8C0EF /* QuotationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455A22D9233D6BFB00B8C0EF /* QuotationsViewController.swift */; };
 		455A22DF233D6BFC00B8C0EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 455A22DE233D6BFC00B8C0EF /* Assets.xcassets */; };
@@ -48,6 +50,8 @@
 /* Begin PBXFileReference section */
 		3884859E6EB379D4BF537772 /* Pods-BitQuotationUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitQuotationUITests.release.xcconfig"; path = "Target Support Files/Pods-BitQuotationUITests/Pods-BitQuotationUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4504A4BF233DABE3009A95E2 /* InjectionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectionUseCase.swift; sourceTree = "<group>"; };
+		4504A4C1233DB41D009A95E2 /* TransactionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionUseCase.swift; sourceTree = "<group>"; };
+		4504A4C4233EB9F3009A95E2 /* OperationTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationTypeEnum.swift; sourceTree = "<group>"; };
 		455A22D4233D6BFB00B8C0EF /* BitQuotation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitQuotation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		455A22D7233D6BFB00B8C0EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		455A22D9233D6BFB00B8C0EF /* QuotationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotationsViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +121,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4504A4C3233EB9E4009A95E2 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				455A2316233D9B9300B8C0EF /* LanguageIdentifierEnum.swift */,
+				4504A4C4233EB9F3009A95E2 /* OperationTypeEnum.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
 		455A22CB233D6BFB00B8C0EF = {
 			isa = PBXGroup;
 			children = (
@@ -148,7 +161,7 @@
 				455A22E0233D6BFC00B8C0EF /* LaunchScreen.storyboard */,
 				455A22E3233D6BFC00B8C0EF /* Info.plist */,
 				455A2321233DABB400B8C0EF /* Use Case */,
-				455A2315233D9B7E00B8C0EF /* Utilities */,
+				455A2315233D9B7E00B8C0EF /* Utility */,
 				455A2308233D8E0600B8C0EF /* Repository */,
 				455A2305233D6FCA00B8C0EF /* Extension */,
 			);
@@ -234,12 +247,12 @@
 			path = Entries;
 			sourceTree = "<group>";
 		};
-		455A2315233D9B7E00B8C0EF /* Utilities */ = {
+		455A2315233D9B7E00B8C0EF /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				455A2316233D9B9300B8C0EF /* LanguageIdentifierEnum.swift */,
+				4504A4C3233EB9E4009A95E2 /* Enum */,
 			);
-			path = Utilities;
+			path = Utility;
 			sourceTree = "<group>";
 		};
 		455A2318233D9D5F00B8C0EF /* Request */ = {
@@ -255,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				4504A4BF233DABE3009A95E2 /* InjectionUseCase.swift */,
+				4504A4C1233DB41D009A95E2 /* TransactionUseCase.swift */,
 			);
 			path = "Use Case";
 			sourceTree = "<group>";
@@ -503,6 +517,8 @@
 				455A2307233D8BF300B8C0EF /* UIViewLayoutExtension.swift in Sources */,
 				455A231C233D9D8E00B8C0EF /* GenericRequest.swift in Sources */,
 				455A2314233D9B3800B8C0EF /* TransactionRemoteDataSourceImpl.swift in Sources */,
+				4504A4C2233DB41D009A95E2 /* TransactionUseCase.swift in Sources */,
+				4504A4C5233EB9F3009A95E2 /* OperationTypeEnum.swift in Sources */,
 				455A2320233DA46E00B8C0EF /* TransactionEntry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
