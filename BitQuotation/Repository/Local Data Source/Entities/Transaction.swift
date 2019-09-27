@@ -10,8 +10,12 @@ struct Transaction {
                                                                           description: String(),
                                                                           values: []) }
         
+        let validCoordinates = coordinates.map { (teste) -> (x: Int, y: Double) in
+            return (x: teste.x ?? 0, y: teste.y ?? 0)
+        }
+        
         return Transaction(name: response.name ?? String(),
                            description: response.name ?? String(),
-                           values: coordinates.map { (x: $0.x, y: $0.y) } )
+                           values: validCoordinates )
     }
 }

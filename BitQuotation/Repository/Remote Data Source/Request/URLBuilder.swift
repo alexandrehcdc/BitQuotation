@@ -1,23 +1,19 @@
 import Foundation
 
-struct URLBuilder {
+class URLBuilder {
     
     var rootAddress = "https://api.blockchain.info"
     
     func withMarketPrice() -> URLBuilder {
-        var builder = URLBuilder()
+        self.rootAddress += "/charts/market-price?cors=true&format=json"
         
-        builder.rootAddress += "/market-price?cors=true&format=json"
-        
-        return builder
+        return self
     }
     
     func with(lang: LanguageIdentifierEnum) -> URLBuilder{
-        var builder = URLBuilder()
+        self.rootAddress += "&lang=\(lang.rawValue)"
         
-        builder.rootAddress += lang.rawValue
-        
-        return builder
+        return self
     }
     
     func build() -> URL? {

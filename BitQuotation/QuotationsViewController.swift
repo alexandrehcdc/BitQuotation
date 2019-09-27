@@ -6,21 +6,11 @@ class QuotationsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-            guard let data = data else { return }
-            do {
-                let decodedData = try JSONDecoder().decode(TransactionResponse.self, from: data)
-                
-                print(decodedData)
-                
-            } catch let error {
-                print(error)
-            }
+       
+        TransactionRemoteDataSourceImpl.getTransactionalData(lang: .en) { (transaction) in
+            print(transaction)
             
         }
-        
-//        task.resume()
         
         self.createLineChart()
     }

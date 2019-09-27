@@ -1,7 +1,8 @@
 import Foundation
 
 struct TransactionRemoteDataSourceImpl: TransactionRemoteDataSource {
-    func getTransactionalData(lang: LanguageIdentifierEnum, _ responseCallback: @escaping ((Transaction) -> Void)) {
+    
+    static func getTransactionalData(lang: LanguageIdentifierEnum, _ responseCallback: @escaping ((Transaction) -> Void)) {
         
         let url = URLBuilder()
                       .withMarketPrice()
@@ -12,7 +13,10 @@ struct TransactionRemoteDataSourceImpl: TransactionRemoteDataSource {
         
         GenericRequest
             .simpleGetWith(url: validURL) { (response: TransactionResponse) in
-            
+                
+            let entity = Transaction.buildFrom(response: response)
+                
+            responseCallback(entity)
         }
     }
     
