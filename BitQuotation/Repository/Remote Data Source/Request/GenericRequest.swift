@@ -6,7 +6,6 @@ struct GenericRequest {
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let retrievedData = data else { return }
-            
             do {
                 let decodedData = try JSONDecoder().decode(T.self, from: retrievedData)
                 

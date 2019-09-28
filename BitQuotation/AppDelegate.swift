@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
-        let initialViewController = QuotationsViewController()
+        let initialViewController = QuotationViewController()
         
         let baseNavigation = UINavigationController(rootViewController: initialViewController)
         

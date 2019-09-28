@@ -11,8 +11,14 @@
 		4504A4C0233DABE3009A95E2 /* InjectionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4504A4BF233DABE3009A95E2 /* InjectionUseCase.swift */; };
 		4504A4C2233DB41D009A95E2 /* TransactionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4504A4C1233DB41D009A95E2 /* TransactionUseCase.swift */; };
 		4504A4C5233EB9F3009A95E2 /* OperationTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4504A4C4233EB9F3009A95E2 /* OperationTypeEnum.swift */; };
+		4504A4C9233EC3C0009A95E2 /* QuotationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4504A4C8233EC3C0009A95E2 /* QuotationPresenter.swift */; };
+		4504A4CB233EC3E8009A95E2 /* QuotationContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4504A4CA233EC3E8009A95E2 /* QuotationContract.swift */; };
+		4504A4CF2340083C009A95E2 /* AxisFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4504A4CE2340083C009A95E2 /* AxisFormatter.swift */; };
+		4504A4D523401610009A95E2 /* OptionSelectionStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4504A4D423401610009A95E2 /* OptionSelectionStackView.swift */; };
+		4504A4D723401686009A95E2 /* OptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4504A4D623401686009A95E2 /* OptionButton.swift */; };
+		4504A4DA23401F1A009A95E2 /* OptionSelectionStackViewContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4504A4D923401F1A009A95E2 /* OptionSelectionStackViewContract.swift */; };
 		455A22D8233D6BFB00B8C0EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455A22D7233D6BFB00B8C0EF /* AppDelegate.swift */; };
-		455A22DA233D6BFB00B8C0EF /* QuotationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455A22D9233D6BFB00B8C0EF /* QuotationsViewController.swift */; };
+		455A22DA233D6BFB00B8C0EF /* QuotationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455A22D9233D6BFB00B8C0EF /* QuotationViewController.swift */; };
 		455A22DF233D6BFC00B8C0EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 455A22DE233D6BFC00B8C0EF /* Assets.xcassets */; };
 		455A22E2233D6BFC00B8C0EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 455A22E0233D6BFC00B8C0EF /* LaunchScreen.storyboard */; };
 		455A22ED233D6BFC00B8C0EF /* BitQuotationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455A22EC233D6BFC00B8C0EF /* BitQuotationTests.swift */; };
@@ -52,9 +58,15 @@
 		4504A4BF233DABE3009A95E2 /* InjectionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectionUseCase.swift; sourceTree = "<group>"; };
 		4504A4C1233DB41D009A95E2 /* TransactionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionUseCase.swift; sourceTree = "<group>"; };
 		4504A4C4233EB9F3009A95E2 /* OperationTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationTypeEnum.swift; sourceTree = "<group>"; };
+		4504A4C8233EC3C0009A95E2 /* QuotationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotationPresenter.swift; sourceTree = "<group>"; };
+		4504A4CA233EC3E8009A95E2 /* QuotationContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotationContract.swift; sourceTree = "<group>"; };
+		4504A4CE2340083C009A95E2 /* AxisFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AxisFormatter.swift; sourceTree = "<group>"; };
+		4504A4D423401610009A95E2 /* OptionSelectionStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionSelectionStackView.swift; sourceTree = "<group>"; };
+		4504A4D623401686009A95E2 /* OptionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionButton.swift; sourceTree = "<group>"; };
+		4504A4D923401F1A009A95E2 /* OptionSelectionStackViewContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionSelectionStackViewContract.swift; sourceTree = "<group>"; };
 		455A22D4233D6BFB00B8C0EF /* BitQuotation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitQuotation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		455A22D7233D6BFB00B8C0EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		455A22D9233D6BFB00B8C0EF /* QuotationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotationsViewController.swift; sourceTree = "<group>"; };
+		455A22D9233D6BFB00B8C0EF /* QuotationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotationViewController.swift; sourceTree = "<group>"; };
 		455A22DE233D6BFC00B8C0EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		455A22E1233D6BFC00B8C0EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		455A22E3233D6BFC00B8C0EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -130,6 +142,61 @@
 			path = Enum;
 			sourceTree = "<group>";
 		};
+		4504A4C6233EC398009A95E2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4504A4C7233EC3A4009A95E2 /* Quotation */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4504A4C7233EC3A4009A95E2 /* Quotation */ = {
+			isa = PBXGroup;
+			children = (
+				455A22D9233D6BFB00B8C0EF /* QuotationViewController.swift */,
+				4504A4C8233EC3C0009A95E2 /* QuotationPresenter.swift */,
+				4504A4CA233EC3E8009A95E2 /* QuotationContract.swift */,
+			);
+			path = Quotation;
+			sourceTree = "<group>";
+		};
+		4504A4CD23400833009A95E2 /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				4504A4CE2340083C009A95E2 /* AxisFormatter.swift */,
+			);
+			path = Date;
+			sourceTree = "<group>";
+		};
+		4504A4D2234015EA009A95E2 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				4504A4D3234015FC009A95E2 /* Components */,
+				455A2305233D6FCA00B8C0EF /* Extension */,
+				455A2315233D9B7E00B8C0EF /* Utility */,
+				455A2321233DABB400B8C0EF /* Use Case */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		4504A4D3234015FC009A95E2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				4504A4D823401F0E009A95E2 /* OptionStackView */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		4504A4D823401F0E009A95E2 /* OptionStackView */ = {
+			isa = PBXGroup;
+			children = (
+				4504A4D423401610009A95E2 /* OptionSelectionStackView.swift */,
+				4504A4D623401686009A95E2 /* OptionButton.swift */,
+				4504A4D923401F1A009A95E2 /* OptionSelectionStackViewContract.swift */,
+			);
+			path = OptionStackView;
+			sourceTree = "<group>";
+		};
 		455A22CB233D6BFB00B8C0EF = {
 			isa = PBXGroup;
 			children = (
@@ -156,14 +223,12 @@
 			isa = PBXGroup;
 			children = (
 				455A22D7233D6BFB00B8C0EF /* AppDelegate.swift */,
-				455A22D9233D6BFB00B8C0EF /* QuotationsViewController.swift */,
+				4504A4C6233EC398009A95E2 /* View */,
 				455A22DE233D6BFC00B8C0EF /* Assets.xcassets */,
 				455A22E0233D6BFC00B8C0EF /* LaunchScreen.storyboard */,
 				455A22E3233D6BFC00B8C0EF /* Info.plist */,
-				455A2321233DABB400B8C0EF /* Use Case */,
-				455A2315233D9B7E00B8C0EF /* Utility */,
 				455A2308233D8E0600B8C0EF /* Repository */,
-				455A2305233D6FCA00B8C0EF /* Extension */,
+				4504A4D2234015EA009A95E2 /* Common */,
 			);
 			path = BitQuotation;
 			sourceTree = "<group>";
@@ -250,6 +315,7 @@
 		455A2315233D9B7E00B8C0EF /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				4504A4CD23400833009A95E2 /* Date */,
 				4504A4C3233EB9E4009A95E2 /* Enum */,
 			);
 			path = Utility;
@@ -506,20 +572,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				455A22DA233D6BFB00B8C0EF /* QuotationsViewController.swift in Sources */,
+				455A22DA233D6BFB00B8C0EF /* QuotationViewController.swift in Sources */,
 				4504A4C0233DABE3009A95E2 /* InjectionUseCase.swift in Sources */,
+				4504A4D523401610009A95E2 /* OptionSelectionStackView.swift in Sources */,
 				455A2310233D983100B8C0EF /* TransactionResponse.swift in Sources */,
+				4504A4D723401686009A95E2 /* OptionButton.swift in Sources */,
 				455A2317233D9B9300B8C0EF /* LanguageIdentifierEnum.swift in Sources */,
+				4504A4CB233EC3E8009A95E2 /* QuotationContract.swift in Sources */,
 				455A2312233D9B2800B8C0EF /* TransactionRemoteDataSource.swift in Sources */,
 				455A231E233DA45900B8C0EF /* Transaction.swift in Sources */,
+				4504A4C9233EC3C0009A95E2 /* QuotationPresenter.swift in Sources */,
 				455A22D8233D6BFB00B8C0EF /* AppDelegate.swift in Sources */,
 				455A231A233D9D6F00B8C0EF /* URLBuilder.swift in Sources */,
+				4504A4CF2340083C009A95E2 /* AxisFormatter.swift in Sources */,
 				455A2307233D8BF300B8C0EF /* UIViewLayoutExtension.swift in Sources */,
 				455A231C233D9D8E00B8C0EF /* GenericRequest.swift in Sources */,
 				455A2314233D9B3800B8C0EF /* TransactionRemoteDataSourceImpl.swift in Sources */,
 				4504A4C2233DB41D009A95E2 /* TransactionUseCase.swift in Sources */,
 				4504A4C5233EB9F3009A95E2 /* OperationTypeEnum.swift in Sources */,
 				455A2320233DA46E00B8C0EF /* TransactionEntry.swift in Sources */,
+				4504A4DA23401F1A009A95E2 /* OptionSelectionStackViewContract.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
