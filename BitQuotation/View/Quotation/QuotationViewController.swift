@@ -9,15 +9,21 @@ class QuotationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let stackview = OptionSelectionStackView(frame: CGRect(x: 0, y: 560, width: self.view.frame.width - 16, height: 40))
-        stackview.set(descriptions: ["1 Mês", "6 Mês", "12 Mês"])
         
-        self.view.addSubview(stackview)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        self.presenter.loadMainQuotation()
+//        self.presenter.loadMainQuotation()
+        
+        let stackview = OptionSelectionStackView(frame: CGRect(x: 0, y: 560, width: self.view.frame.width - 16, height: 40))
+        
+        self.view.addSubview(stackview)
+        
+        stackview.set(descriptions: ["3 Meses", "12 Meses", "24 Meses"])
+        
+        stackview.anchor(top: nil, leading: self.view.leadingAnchor, trailing: self.view.trailingAnchor, padding: UIEdgeInsets(top: 8, left: 8, bottom: 0, right: 8))
     }
 
 }

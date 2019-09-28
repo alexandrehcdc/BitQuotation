@@ -16,17 +16,18 @@ class OptionButton: UIButton {
     }
     
     func setLabelText(value: String) {
-        self.titleLabel?.text = value
-        
+        self.setTitle(value, for: .normal)
         self.setLayout()
     }
     
     private func setLayout() {
-        self.layer.cornerRadius = 4
-        self.backgroundColor    = UIColor(red: 66/255,
-                                          green: 158/255,
-                                          blue: 245/255,
-                                          alpha: 1)
+        self.layer.cornerRadius        = 4
+        self.titleLabel?.textAlignment = .center
+        
+        self.backgroundColor           = UIColor(red: 66/255,
+                                                 green: 158/255,
+                                                 blue: 245/255,
+                                                 alpha: 1)
         
         self.titleLabel?.fillSuperView()
     }
