@@ -43,7 +43,7 @@ extension QuotationViewController: QuotationViewContract {
             self.chartView?.legend.textColor        = .white
             
             self.mountButtons(selected: .year)
-            
+            self.mountCard()
         }
     }
     
@@ -66,18 +66,33 @@ extension QuotationViewController: QuotationViewContract {
     }
     
     func mountCard() {
-        // to do
+        DispatchQueue.main.async { [unowned self] in
+            self.cardView = QuotationCardView(frame: CGRect(x: 0,
+                                                            y: 0,
+                                                            width: self.view.frame.width,
+                                                            height: self.view.frame.height * 1/8))
+            
+            self.view.addSubview(self.cardView)
+            
+            self.cardView.anchor(top: self.buttonsGroup.bottomAnchor,
+                                 leading: self.view.leadingAnchor,
+                                 bottom: self.view.bottomAnchor,
+                                 trailing: self.view.trailingAnchor,
+                                 padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
+        }
     }
     
     func mountButtons(selected: TimeInMonthsEnum) {
         DispatchQueue.main.async { [unowned self] in
-            self.buttonsGroup = OptionSelectionStackView(frame: CGRect(x: 0, y: 560, width: self.view.frame.width - 16, height: 40))
+            self.buttonsGroup = OptionSelectionStackView(frame: CGRect(x: 0, y: 560, width: self.view.frame.width - 16, height: self.view.frame.height * 1/12))
             
             self.view.addSubview(self.buttonsGroup)
             
             self.buttonsGroup.contract = self
             
-            self.buttonsGroup.set(descriptions: ["1 Mês", "6 Meses", "12 Meses"])
+            self.buttonsGroup.set(descriptions: ["\(TimeInMonthsEnum.month.rawValue) \(AppStrings.date_units_month)",
+                                                 "\(TimeInMonthsEnum.semester.rawValue) \(AppStrings.date_units_month_plural)",
+                                                 "\(TimeInMonthsEnum.year.rawValue) \(AppStrings.date_units_month_plural)"])
             
             self.buttonsGroup.anchor(top: self.chartView?.bottomAnchor,
                                      leading: self.view.leadingAnchor,
@@ -98,7 +113,7 @@ extension QuotationViewController: QuotationViewContract {
             values.append(ChartDataEntry(x: Double(value.x), y: value.y))
         }
         
-        let set = LineChartDataSet(entries: values, label: "To do - fix label")
+        let set = LineChartDataSet(entries: values, label: AppStrings.currency_btc_in_usd)
         
         set.valueTextColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
         set.circleColors   = [UIColor(red: 0/255, green: 227/255, blue: 216/255, alpha: 1)]

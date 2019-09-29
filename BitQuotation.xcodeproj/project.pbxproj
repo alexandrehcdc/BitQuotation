@@ -25,6 +25,10 @@
 		4504A4EB23405DA0009A95E2 /* TimeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4504A4EA23405DA0009A95E2 /* TimeEnum.swift */; };
 		4504A4ED2340FFAA009A95E2 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4504A4EC2340FFAA009A95E2 /* UIViewExtension.swift */; };
 		4504A4EF23413761009A95E2 /* QuotationViewControllerElementsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4504A4EE23413761009A95E2 /* QuotationViewControllerElementsExtension.swift */; };
+		4504A4F12341421B009A95E2 /* AppStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4504A4F02341421B009A95E2 /* AppStrings.swift */; };
+		4504A4F6234142A3009A95E2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4504A4F8234142A3009A95E2 /* Localizable.strings */; };
+		4504A4FF23414890009A95E2 /* QuotationCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4504A4FE23414890009A95E2 /* QuotationCardView.swift */; };
+		4504A50123414B94009A95E2 /* UIStackViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4504A50023414B94009A95E2 /* UIStackViewExtension.swift */; };
 		455A22D8233D6BFB00B8C0EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455A22D7233D6BFB00B8C0EF /* AppDelegate.swift */; };
 		455A22DA233D6BFB00B8C0EF /* QuotationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455A22D9233D6BFB00B8C0EF /* QuotationViewController.swift */; };
 		455A22DF233D6BFC00B8C0EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 455A22DE233D6BFC00B8C0EF /* Assets.xcassets */; };
@@ -80,6 +84,14 @@
 		4504A4EA23405DA0009A95E2 /* TimeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEnum.swift; sourceTree = "<group>"; };
 		4504A4EC2340FFAA009A95E2 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		4504A4EE23413761009A95E2 /* QuotationViewControllerElementsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotationViewControllerElementsExtension.swift; sourceTree = "<group>"; };
+		4504A4F02341421B009A95E2 /* AppStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStrings.swift; sourceTree = "<group>"; };
+		4504A4F7234142A3009A95E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4504A4F9234142DE009A95E2 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		4504A4FA234142DE009A95E2 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		4504A4FB234142EF009A95E2 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		4504A4FC234142F0009A95E2 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4504A4FE23414890009A95E2 /* QuotationCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotationCardView.swift; sourceTree = "<group>"; };
+		4504A50023414B94009A95E2 /* UIStackViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackViewExtension.swift; sourceTree = "<group>"; };
 		455A22D4233D6BFB00B8C0EF /* BitQuotation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitQuotation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		455A22D7233D6BFB00B8C0EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		455A22D9233D6BFB00B8C0EF /* QuotationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotationViewController.swift; sourceTree = "<group>"; };
@@ -200,6 +212,7 @@
 		4504A4D3234015FC009A95E2 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				4504A4FD2341487E009A95E2 /* QuotationCard */,
 				4504A4D823401F0E009A95E2 /* OptionStackView */,
 			);
 			path = Component;
@@ -227,8 +240,18 @@
 			isa = PBXGroup;
 			children = (
 				4504A4E52340435F009A95E2 /* LocaleFinder.swift */,
+				4504A4F02341421B009A95E2 /* AppStrings.swift */,
+				4504A4F8234142A3009A95E2 /* Localizable.strings */,
 			);
 			path = Locale;
+			sourceTree = "<group>";
+		};
+		4504A4FD2341487E009A95E2 /* QuotationCard */ = {
+			isa = PBXGroup;
+			children = (
+				4504A4FE23414890009A95E2 /* QuotationCardView.swift */,
+			);
+			path = QuotationCard;
 			sourceTree = "<group>";
 		};
 		455A22CB233D6BFB00B8C0EF = {
@@ -291,6 +314,7 @@
 				455A2306233D8BF300B8C0EF /* UIViewLayoutExtension.swift */,
 				4504A4DF23402F16009A95E2 /* StringExtension.swift */,
 				4504A4EC2340FFAA009A95E2 /* UIViewExtension.swift */,
+				4504A50023414B94009A95E2 /* UIStackViewExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -482,6 +506,8 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
+				es,
 			);
 			mainGroup = 455A22CB233D6BFB00B8C0EF;
 			productRefGroup = 455A22D5233D6BFB00B8C0EF /* Products */;
@@ -501,6 +527,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				455A22E2233D6BFC00B8C0EF /* LaunchScreen.storyboard in Resources */,
+				4504A4F6234142A3009A95E2 /* Localizable.strings in Resources */,
 				455A22DF233D6BFC00B8C0EF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -617,12 +644,15 @@
 				4504A4D523401610009A95E2 /* OptionSelectionStackView.swift in Sources */,
 				4504A4E32340356A009A95E2 /* TransactionConverter.swift in Sources */,
 				455A2310233D983100B8C0EF /* TransactionResponse.swift in Sources */,
+				4504A4FF23414890009A95E2 /* QuotationCardView.swift in Sources */,
 				4504A4D723401686009A95E2 /* OptionButton.swift in Sources */,
 				455A2317233D9B9300B8C0EF /* LanguageIdentifierEnum.swift in Sources */,
 				4504A4DE23402EA8009A95E2 /* TransactionLocalDataSource.swift in Sources */,
 				4504A4E62340435F009A95E2 /* LocaleFinder.swift in Sources */,
 				4504A4CB233EC3E8009A95E2 /* QuotationContract.swift in Sources */,
+				4504A4F12341421B009A95E2 /* AppStrings.swift in Sources */,
 				455A2312233D9B2800B8C0EF /* TransactionRemoteDataSource.swift in Sources */,
+				4504A50123414B94009A95E2 /* UIStackViewExtension.swift in Sources */,
 				455A231E233DA45900B8C0EF /* Transaction.swift in Sources */,
 				4504A4C9233EC3C0009A95E2 /* QuotationPresenter.swift in Sources */,
 				455A22D8233D6BFB00B8C0EF /* AppDelegate.swift in Sources */,
@@ -675,10 +705,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		4504A4F8234142A3009A95E2 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4504A4F7234142A3009A95E2 /* en */,
+				4504A4FA234142DE009A95E2 /* pt-BR */,
+				4504A4FC234142F0009A95E2 /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		455A22E0233D6BFC00B8C0EF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				455A22E1233D6BFC00B8C0EF /* Base */,
+				4504A4F9234142DE009A95E2 /* pt-BR */,
+				4504A4FB234142EF009A95E2 /* es */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -690,6 +732,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -751,6 +794,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

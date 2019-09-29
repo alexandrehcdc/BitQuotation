@@ -1,0 +1,25 @@
+// Strings genéricas
+"region.identifier"       = "pt_BR";
+"date.months.january"     = "jan";
+"date.months.february"    = "fev";
+"date.months.march"       = "mar";
+"date.months.april"       = "abr";
+"date.months.may"         = "mai";
+"date.months.june"        = "jun";
+"date.months.July"        = "jul";
+"date.months.august"      = "ago";
+"date.months.september"   = "set";
+"date.months.october"     = "out";
+"date.months.november"    = "nov";
+"date.months.december"    = "dez";
+"date.units.day"          = "dia";
+"date.units.day.plural"   = "dias";
+"date.units.month"        = "mês";
+"date.units.month.plural" = "meses";
+"date.units.year"         = "ano";
+"date.units.year.plural"  = "anos";
+"currency.dollar.abbr"    = "USD";
+
+// Frases
+"currency.btcinusd"       = "Valor de mercado do bitcoin em USD";
+

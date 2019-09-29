@@ -1,0 +1,24 @@
+// General Strings
+"region.identifier"       = "en_US";
+"date.months.january"     = "jan";
+"date.months.february"    = "feb";
+"date.months.march"       = "mar";
+"date.months.april"       = "apr";
+"date.months.may"         = "may";
+"date.months.june"        = "jun";
+"date.months.July"        = "jul";
+"date.months.august"      = "aug";
+"date.months.september"   = "sep";
+"date.months.october"     = "oct";
+"date.months.november"    = "nov";
+"date.months.december"    = "dec";
+"date.units.day"          = "day";
+"date.units.day.plural"   = "days";
+"date.units.month"        = "month";
+"date.units.month.plural" = "months";
+"date.units.year"         = "year";
+"date.units.year.plural"  = "years";
+"currency.dollar.abbr"    = "USD";
+
+// Phrases
+"currency.btcinusd"       = "Bitcoin market value in USD";

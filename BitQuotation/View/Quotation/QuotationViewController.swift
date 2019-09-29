@@ -4,6 +4,7 @@ class QuotationViewController: UIViewController {
     
     var chartView: LineChartView?
     var buttonsGroup: OptionSelectionStackView!
+    var cardView: QuotationCardView!
     var activityIndicator: UIActivityIndicatorView! = UIActivityIndicatorView()
     
     lazy var presenter: QuotationPresenter = { [unowned self] in
@@ -12,7 +13,6 @@ class QuotationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
