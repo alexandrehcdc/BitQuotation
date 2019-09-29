@@ -2,13 +2,13 @@ import Foundation
 
 protocol QuotationViewContract: class {
     func mountGraphWith(transaction: Transaction, period: Int)
-    func redraw(with period: TimeEnum)
+    func redraw(with period: TimeInDaysEnum)
     func startLoading()
     func endLoading()
     func mountCard()
-    func mountButtons()
+    func mountButtons(selected: TimeInMonthsEnum)
 }
 
 protocol QuotationPresenterContract {
-    func loadMainQuotation(period: TimeEnum)
+    func loadMainQuotation(period: TimeInDaysEnum)
 }

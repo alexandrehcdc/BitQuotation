@@ -63,9 +63,13 @@ class OptionSelectionStackView : UIStackView {
 }
 
 extension OptionSelectionStackView: OptionSelectionStackViewContract {
+    func switchState(tag: Int) {
+        // to do
+    }
+    
     
     func switchButton(tag: Int) {
-        self.contract?.startLoading()
+        guard let timeSet = TimeInMonthsEnum(rawValue: self.buttons[tag].propertyValue) else { return }
         
         for button in self.buttons {
             let isButtonSelected = button.tag == tag
@@ -73,7 +77,14 @@ extension OptionSelectionStackView: OptionSelectionStackViewContract {
             button.switchState(selected: isButtonSelected)
         }
         
-        self.contract?.redraw(with: TimeEnum(rawValue: self.buttons[tag].propertyValue) ?? .year)
+        switch timeSet {
+        case .month:
+            self.contract?.redraw(with: .month)
+        case .semester:
+            self.contract?.redraw(with: .semester)
+        case .year:
+            self.contract?.redraw(with: .year)
+        }
     }
     
 }

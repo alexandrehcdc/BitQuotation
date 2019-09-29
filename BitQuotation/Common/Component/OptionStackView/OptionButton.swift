@@ -9,7 +9,7 @@ class OptionButton: UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.addTarget(self, action: #selector(teste), for: .touchUpInside)
+        self.addTarget(self, action: #selector(triggerSwitch), for: .touchUpInside)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -49,7 +49,7 @@ class OptionButton: UIButton {
         }
     }
     
-    @objc func teste(sender: UIButton) {
+    @objc func triggerSwitch(sender: UIButton) {
         self.contract?.switchButton(tag: sender.tag)
     }
     

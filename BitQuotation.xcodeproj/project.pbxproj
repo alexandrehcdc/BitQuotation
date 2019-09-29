@@ -23,6 +23,8 @@
 		4504A4E32340356A009A95E2 /* TransactionConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4504A4E22340356A009A95E2 /* TransactionConverter.swift */; };
 		4504A4E62340435F009A95E2 /* LocaleFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4504A4E52340435F009A95E2 /* LocaleFinder.swift */; };
 		4504A4EB23405DA0009A95E2 /* TimeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4504A4EA23405DA0009A95E2 /* TimeEnum.swift */; };
+		4504A4ED2340FFAA009A95E2 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4504A4EC2340FFAA009A95E2 /* UIViewExtension.swift */; };
+		4504A4EF23413761009A95E2 /* QuotationViewControllerElementsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4504A4EE23413761009A95E2 /* QuotationViewControllerElementsExtension.swift */; };
 		455A22D8233D6BFB00B8C0EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455A22D7233D6BFB00B8C0EF /* AppDelegate.swift */; };
 		455A22DA233D6BFB00B8C0EF /* QuotationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455A22D9233D6BFB00B8C0EF /* QuotationViewController.swift */; };
 		455A22DF233D6BFC00B8C0EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 455A22DE233D6BFC00B8C0EF /* Assets.xcassets */; };
@@ -76,6 +78,8 @@
 		4504A4E22340356A009A95E2 /* TransactionConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionConverter.swift; sourceTree = "<group>"; };
 		4504A4E52340435F009A95E2 /* LocaleFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaleFinder.swift; sourceTree = "<group>"; };
 		4504A4EA23405DA0009A95E2 /* TimeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEnum.swift; sourceTree = "<group>"; };
+		4504A4EC2340FFAA009A95E2 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		4504A4EE23413761009A95E2 /* QuotationViewControllerElementsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotationViewControllerElementsExtension.swift; sourceTree = "<group>"; };
 		455A22D4233D6BFB00B8C0EF /* BitQuotation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitQuotation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		455A22D7233D6BFB00B8C0EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		455A22D9233D6BFB00B8C0EF /* QuotationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotationViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +173,7 @@
 				455A22D9233D6BFB00B8C0EF /* QuotationViewController.swift */,
 				4504A4C8233EC3C0009A95E2 /* QuotationPresenter.swift */,
 				4504A4CA233EC3E8009A95E2 /* QuotationContract.swift */,
+				4504A4EE23413761009A95E2 /* QuotationViewControllerElementsExtension.swift */,
 			);
 			path = Quotation;
 			sourceTree = "<group>";
@@ -252,10 +257,10 @@
 			isa = PBXGroup;
 			children = (
 				455A22D7233D6BFB00B8C0EF /* AppDelegate.swift */,
-				4504A4C6233EC398009A95E2 /* View */,
 				455A22DE233D6BFC00B8C0EF /* Assets.xcassets */,
 				455A22E0233D6BFC00B8C0EF /* LaunchScreen.storyboard */,
 				455A22E3233D6BFC00B8C0EF /* Info.plist */,
+				4504A4C6233EC398009A95E2 /* View */,
 				455A2308233D8E0600B8C0EF /* Repository */,
 				4504A4D2234015EA009A95E2 /* Common */,
 			);
@@ -285,6 +290,7 @@
 			children = (
 				455A2306233D8BF300B8C0EF /* UIViewLayoutExtension.swift */,
 				4504A4DF23402F16009A95E2 /* StringExtension.swift */,
+				4504A4EC2340FFAA009A95E2 /* UIViewExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -621,8 +627,10 @@
 				4504A4C9233EC3C0009A95E2 /* QuotationPresenter.swift in Sources */,
 				455A22D8233D6BFB00B8C0EF /* AppDelegate.swift in Sources */,
 				455A231A233D9D6F00B8C0EF /* URLBuilder.swift in Sources */,
+				4504A4ED2340FFAA009A95E2 /* UIViewExtension.swift in Sources */,
 				4504A4EB23405DA0009A95E2 /* TimeEnum.swift in Sources */,
 				4504A4CF2340083C009A95E2 /* AxisFormatter.swift in Sources */,
+				4504A4EF23413761009A95E2 /* QuotationViewControllerElementsExtension.swift in Sources */,
 				4504A4DC23402E86009A95E2 /* TransactionLocalDataSourceImpl.swift in Sources */,
 				455A2307233D8BF300B8C0EF /* UIViewLayoutExtension.swift in Sources */,
 				455A231C233D9D8E00B8C0EF /* GenericRequest.swift in Sources */,
