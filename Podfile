@@ -7,6 +7,7 @@ target 'BitQuotation' do
 
   # Pods for BitQuotation
   pod 'Charts'
+  pod 'RealmSwift', '3.7.6'
   target 'BitQuotationTests' do
     inherit! :search_paths
     # Pods for testing

@@ -17,6 +17,11 @@
 		4504A4D523401610009A95E2 /* OptionSelectionStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4504A4D423401610009A95E2 /* OptionSelectionStackView.swift */; };
 		4504A4D723401686009A95E2 /* OptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4504A4D623401686009A95E2 /* OptionButton.swift */; };
 		4504A4DA23401F1A009A95E2 /* OptionSelectionStackViewContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4504A4D923401F1A009A95E2 /* OptionSelectionStackViewContract.swift */; };
+		4504A4DC23402E86009A95E2 /* TransactionLocalDataSourceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4504A4DB23402E86009A95E2 /* TransactionLocalDataSourceImpl.swift */; };
+		4504A4DE23402EA8009A95E2 /* TransactionLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4504A4DD23402EA8009A95E2 /* TransactionLocalDataSource.swift */; };
+		4504A4E023402F16009A95E2 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4504A4DF23402F16009A95E2 /* StringExtension.swift */; };
+		4504A4E32340356A009A95E2 /* TransactionConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4504A4E22340356A009A95E2 /* TransactionConverter.swift */; };
+		4504A4E62340435F009A95E2 /* LocaleFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4504A4E52340435F009A95E2 /* LocaleFinder.swift */; };
 		455A22D8233D6BFB00B8C0EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455A22D7233D6BFB00B8C0EF /* AppDelegate.swift */; };
 		455A22DA233D6BFB00B8C0EF /* QuotationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455A22D9233D6BFB00B8C0EF /* QuotationViewController.swift */; };
 		455A22DF233D6BFC00B8C0EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 455A22DE233D6BFC00B8C0EF /* Assets.xcassets */; };
@@ -64,6 +69,11 @@
 		4504A4D423401610009A95E2 /* OptionSelectionStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionSelectionStackView.swift; sourceTree = "<group>"; };
 		4504A4D623401686009A95E2 /* OptionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionButton.swift; sourceTree = "<group>"; };
 		4504A4D923401F1A009A95E2 /* OptionSelectionStackViewContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionSelectionStackViewContract.swift; sourceTree = "<group>"; };
+		4504A4DB23402E86009A95E2 /* TransactionLocalDataSourceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionLocalDataSourceImpl.swift; sourceTree = "<group>"; };
+		4504A4DD23402EA8009A95E2 /* TransactionLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionLocalDataSource.swift; sourceTree = "<group>"; };
+		4504A4DF23402F16009A95E2 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		4504A4E22340356A009A95E2 /* TransactionConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionConverter.swift; sourceTree = "<group>"; };
+		4504A4E52340435F009A95E2 /* LocaleFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaleFinder.swift; sourceTree = "<group>"; };
 		455A22D4233D6BFB00B8C0EF /* BitQuotation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitQuotation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		455A22D7233D6BFB00B8C0EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		455A22D9233D6BFB00B8C0EF /* QuotationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotationViewController.swift; sourceTree = "<group>"; };
@@ -171,7 +181,7 @@
 		4504A4D2234015EA009A95E2 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				4504A4D3234015FC009A95E2 /* Components */,
+				4504A4D3234015FC009A95E2 /* Component */,
 				455A2305233D6FCA00B8C0EF /* Extension */,
 				455A2315233D9B7E00B8C0EF /* Utility */,
 				455A2321233DABB400B8C0EF /* Use Case */,
@@ -179,12 +189,12 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
-		4504A4D3234015FC009A95E2 /* Components */ = {
+		4504A4D3234015FC009A95E2 /* Component */ = {
 			isa = PBXGroup;
 			children = (
 				4504A4D823401F0E009A95E2 /* OptionStackView */,
 			);
-			path = Components;
+			path = Component;
 			sourceTree = "<group>";
 		};
 		4504A4D823401F0E009A95E2 /* OptionStackView */ = {
@@ -195,6 +205,22 @@
 				4504A4D923401F1A009A95E2 /* OptionSelectionStackViewContract.swift */,
 			);
 			path = OptionStackView;
+			sourceTree = "<group>";
+		};
+		4504A4E123403556009A95E2 /* Converters */ = {
+			isa = PBXGroup;
+			children = (
+				4504A4E22340356A009A95E2 /* TransactionConverter.swift */,
+			);
+			path = Converters;
+			sourceTree = "<group>";
+		};
+		4504A4E423404352009A95E2 /* Locale */ = {
+			isa = PBXGroup;
+			children = (
+				4504A4E52340435F009A95E2 /* LocaleFinder.swift */,
+			);
+			path = Locale;
 			sourceTree = "<group>";
 		};
 		455A22CB233D6BFB00B8C0EF = {
@@ -255,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				455A2306233D8BF300B8C0EF /* UIViewLayoutExtension.swift */,
+				4504A4DF23402F16009A95E2 /* StringExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -271,8 +298,11 @@
 		455A2309233D8E3200B8C0EF /* Local Data Source */ = {
 			isa = PBXGroup;
 			children = (
+				4504A4E123403556009A95E2 /* Converters */,
 				455A230E233D92B300B8C0EF /* Entries */,
 				455A230D233D92A800B8C0EF /* Entities */,
+				4504A4DB23402E86009A95E2 /* TransactionLocalDataSourceImpl.swift */,
+				4504A4DD23402EA8009A95E2 /* TransactionLocalDataSource.swift */,
 			);
 			path = "Local Data Source";
 			sourceTree = "<group>";
@@ -315,6 +345,7 @@
 		455A2315233D9B7E00B8C0EF /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				4504A4E423404352009A95E2 /* Locale */,
 				4504A4CD23400833009A95E2 /* Date */,
 				4504A4C3233EB9E4009A95E2 /* Enum */,
 			);
@@ -575,9 +606,12 @@
 				455A22DA233D6BFB00B8C0EF /* QuotationViewController.swift in Sources */,
 				4504A4C0233DABE3009A95E2 /* InjectionUseCase.swift in Sources */,
 				4504A4D523401610009A95E2 /* OptionSelectionStackView.swift in Sources */,
+				4504A4E32340356A009A95E2 /* TransactionConverter.swift in Sources */,
 				455A2310233D983100B8C0EF /* TransactionResponse.swift in Sources */,
 				4504A4D723401686009A95E2 /* OptionButton.swift in Sources */,
 				455A2317233D9B9300B8C0EF /* LanguageIdentifierEnum.swift in Sources */,
+				4504A4DE23402EA8009A95E2 /* TransactionLocalDataSource.swift in Sources */,
+				4504A4E62340435F009A95E2 /* LocaleFinder.swift in Sources */,
 				4504A4CB233EC3E8009A95E2 /* QuotationContract.swift in Sources */,
 				455A2312233D9B2800B8C0EF /* TransactionRemoteDataSource.swift in Sources */,
 				455A231E233DA45900B8C0EF /* Transaction.swift in Sources */,
@@ -585,12 +619,14 @@
 				455A22D8233D6BFB00B8C0EF /* AppDelegate.swift in Sources */,
 				455A231A233D9D6F00B8C0EF /* URLBuilder.swift in Sources */,
 				4504A4CF2340083C009A95E2 /* AxisFormatter.swift in Sources */,
+				4504A4DC23402E86009A95E2 /* TransactionLocalDataSourceImpl.swift in Sources */,
 				455A2307233D8BF300B8C0EF /* UIViewLayoutExtension.swift in Sources */,
 				455A231C233D9D8E00B8C0EF /* GenericRequest.swift in Sources */,
 				455A2314233D9B3800B8C0EF /* TransactionRemoteDataSourceImpl.swift in Sources */,
 				4504A4C2233DB41D009A95E2 /* TransactionUseCase.swift in Sources */,
 				4504A4C5233EB9F3009A95E2 /* OperationTypeEnum.swift in Sources */,
 				455A2320233DA46E00B8C0EF /* TransactionEntry.swift in Sources */,
+				4504A4E023402F16009A95E2 /* StringExtension.swift in Sources */,
 				4504A4DA23401F1A009A95E2 /* OptionSelectionStackViewContract.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

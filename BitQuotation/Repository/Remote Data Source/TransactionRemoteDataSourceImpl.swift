@@ -14,7 +14,7 @@ struct TransactionRemoteDataSourceImpl: TransactionRemoteDataSource {
         GenericRequest
             .simpleGetWith(url: validURL) { (response: TransactionResponse) in
                 
-            let entity = Transaction.buildFrom(response: response)
+            let entity = TransactionConverter.asEntity(from: response)
                 
             responseCallback(entity)
         }
