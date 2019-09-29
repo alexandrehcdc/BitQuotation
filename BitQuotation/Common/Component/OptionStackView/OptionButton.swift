@@ -4,6 +4,7 @@ import UIKit
 class OptionButton: UIButton {
     
     weak var contract: OptionSelectionStackViewContract?
+    var propertyValue: Int!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -15,7 +16,9 @@ class OptionButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setLabelText(value: String) {
+    func setLabelText(value: String, propertyValue: Int) {
+        self.propertyValue = propertyValue
+        
         self.setTitle(value, for: .normal)
         self.setLayout()
     }

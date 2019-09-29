@@ -5,9 +5,9 @@ struct QuotationPresenter: QuotationPresenterContract {
     let transactionUseCase: TransactionUseCase = InjectionUseCase.provideTransactionUseCase()
     unowned var view: QuotationViewContract
     
-    func loadMainQuotation() {
+    func loadMainQuotation(period: TimeEnum) {
         transactionUseCase.getTransactionDataBy(operation: .local_first) { transaction in
-            self.view.mountGraphWith(transaction: transaction)
+            self.view.mountGraphWith(transaction: transaction, period: period.rawValue)
         }
     }
     
