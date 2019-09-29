@@ -8,18 +8,24 @@ struct TransactionUseCase {
         
         switch operation {
         case .local_first:
-            guard let transaction = self.localDataSource.findLatest() else { return }
+            guard let transaction = self.localDataSource.findLatest() else {
+                getTransactionDataBy(operation: .remote_first, responseCallback)
+                return
+            }
             
-            if transaction.createdAt.timeIntervalSince1970 > Date().timeIntervalSince1970 + 86400 {
+            if (transaction.createdAt.timeIntervalSince1970 + 86400) > Date().timeIntervalSince1970 {
                 responseCallback(transaction)
                 return
             }
             getTransactionDataBy(operation: .remote_first, responseCallback)
         case .remote_first:
             self.remoteDataSource.getTransactionalData(lang: .en) { (response) in
-                guard let transaction = self.localDataSource.save(transaction: response) else { return }
-                
-                responseCallback(transaction)
+
+                DispatchQueue.main.async {
+                    guard let transaction = self.localDataSource.save(transaction: response) else { return }
+                    
+                    responseCallback(transaction)
+                }
             }
         case .remote_only:
             self.remoteDataSource.getTransactionalData(lang: .en) { (response) in

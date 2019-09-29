@@ -6,6 +6,4 @@ public struct Transaction {
     let createdAt: Date
     let nationality: LanguageIdentifierEnum
     let values: [(x: Int, y: Double)]
-    
-    
 }

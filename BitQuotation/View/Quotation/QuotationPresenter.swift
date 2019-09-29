@@ -6,7 +6,7 @@ struct QuotationPresenter: QuotationPresenterContract {
     unowned var view: QuotationViewContract
     
     func loadMainQuotation() {
-        transactionUseCase.getTransactionDataBy(operation: .remote_only) { transaction in
+        transactionUseCase.getTransactionDataBy(operation: .local_first) { transaction in
             self.view.mountGraphWith(transaction: transaction)
         }
     }

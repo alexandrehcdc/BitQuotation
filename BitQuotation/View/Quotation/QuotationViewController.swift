@@ -9,21 +9,19 @@ class QuotationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        self.presenter.loadMainQuotation()
+        self.presenter.loadMainQuotation()
         
-        let stackview = OptionSelectionStackView(frame: CGRect(x: 0, y: 560, width: self.view.frame.width - 16, height: 40))
-        
-        self.view.addSubview(stackview)
-        
-        stackview.set(descriptions: ["3 Meses", "12 Meses", "24 Meses"])
-        
-        stackview.anchor(top: nil, leading: self.view.leadingAnchor, trailing: self.view.trailingAnchor, padding: UIEdgeInsets(top: 8, left: 8, bottom: 0, right: 8))
+//        let stackview = OptionSelectionStackView(frame: CGRect(x: 0, y: 560, width: self.view.frame.width - 16, height: 40))
+//
+//        self.view.addSubview(stackview)
+//
+//        stackview.set(descriptions: ["3 Meses", "12 Meses", "24 Meses"])
+//
+//        stackview.anchor(top: nil, leading: self.view.leadingAnchor, trailing: self.view.trailingAnchor, padding: UIEdgeInsets(top: 8, left: 8, bottom: 0, right: 8))
     }
 
 }
@@ -32,7 +30,7 @@ extension QuotationViewController: QuotationViewContract {
     
     func mountGraphWith(transaction: Transaction) {
         
-        DispatchQueue.main.sync { [unowned self] in
+        DispatchQueue.main.async { [unowned self] in
             let chartView = LineChartView(frame: CGRect(x: 16,
                                                         y: 16,
                                                         width: self.view.frame.width - 16,

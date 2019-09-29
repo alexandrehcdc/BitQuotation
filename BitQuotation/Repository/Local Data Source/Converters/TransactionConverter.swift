@@ -23,7 +23,7 @@ public struct TransactionConverter {
         
         var values: [(x: Int, y: Double)] = []
         
-        for index in 0...entry.timestamp.count {
+        for index in 0...entry.timestamp.count - 1 {
            values.append((x: entry.timestamp[index],
                           y: entry.quotationValue[index]))
         }
