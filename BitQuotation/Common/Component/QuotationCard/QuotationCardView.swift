@@ -11,9 +11,12 @@ class QuotationCardView: UIView {
     var monthDescLabel: UILabel!
     var monthValueLabel: UILabel!
     
+    let gray = UIColor(red: 151/255, green: 155/255, blue: 161/255, alpha: 1)
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setLayout()
+        setCardLayout()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -50,6 +53,11 @@ class QuotationCardView: UIView {
                   monthPercentage: monthQuotationPercentage)
     }
     
+    private func setCardLayout() {
+        self.layer.cornerRadius = 5
+        self.backgroundColor    = gray
+    }
+    
     private func setLayout() {
         
         self.statusImageView         = UIImageView(frame: CGRect(x: 0, y: 0, width: self.frame.height/2, height: self.frame.height/2))
@@ -78,7 +86,6 @@ class QuotationCardView: UIView {
         self.addSubviews(upperContainer, lowerContainer)
         
         upperContainer.anchor(top: self.topAnchor,
-                              leading: self.leadingAnchor,
                               trailing: self.trailingAnchor,
                               padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                               size: CGSize(width: self.frame.width, height: self.frame.height/2))
@@ -95,21 +102,32 @@ class QuotationCardView: UIView {
         
         self.statusImageView.image       = UIImage.arrow.withRenderingMode(.alwaysTemplate)
         self.statusImageView.contentMode = .scaleAspectFit
-        self.statusImageView.tintColor   = .green
         
-        self.statusImageView.anchor(size: CGSize(width: self.frame.height/2,
-                                                 height: self.frame.height/2))
+        if !isValueNegative(value: dailyPercentage) {
+            self.statusImageView.tintColor         = .green
+            self.dayValuePercentageLabel.text      = "\(String(format: "%.2f", dailyPercentage))%"
+            self.dayValuePercentageLabel.textColor = .green
+        } else {
+            self.statusImageView.transform         = CGAffineTransform(rotationAngle: CGFloat.pi)
+            self.statusImageView.tintColor         = .red
+            self.dayValuePercentageLabel.textColor = .red
+            self.dayValuePercentageLabel.text      = "-\(String(format: "%.2f", dailyPercentage))%"
+        }
         
-        self.dayValueLabel.text = String(format: "%.2f", dailyValue)
-        self.dayValuePercentageLabel.text = String(format: "%.2f", dailyPercentage)
-        self.weekDescLabel.text = AppStrings.date_units_week.capitalized
-        self.weekValueLabel.text = String(format: "%.2f", weekPercentage)
-        self.monthDescLabel.text = AppStrings.date_units_month.capitalized
-        self.monthValueLabel.text = String(format: "%.2f", monthPercentage)
+        self.statusImageView.anchor(size: CGSize(width: (self.frame.height/2) - 8,
+                                                 height: (self.frame.height/2) - 8))
+        
+        self.dayValueLabel.text   = " \(AppStrings.currency_dollar_abbr) \(String(format: "%.2f", dailyValue))"
+        self.weekDescLabel.text   = "\(AppStrings.date_units_week.capitalized):"
+        self.weekValueLabel.text  = "\(String(format: "%.2f", weekPercentage))%"
+        self.monthDescLabel.text  = "\(AppStrings.date_units_month.capitalized):"
+        self.monthValueLabel.text = "\(String(format: "%.2f", monthPercentage))%"
         
         self.backgroundColor = .white
     }
     
-//    private func style negative positive
+    private func isValueNegative(value: Double) -> Bool {
+        return value < 0 ? true : false
+    }
     
 }

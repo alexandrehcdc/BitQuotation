@@ -78,7 +78,7 @@ extension QuotationViewController: QuotationViewContract {
                                  leading: self.view.leadingAnchor,
                                  bottom: self.view.bottomAnchor,
                                  trailing: self.view.trailingAnchor,
-                                 padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
+                                 padding: UIEdgeInsets(top: 8, left: 0, bottom: 0, right: 0))
             
             self.cardView.setTransactionValues(transaction: transaction)
         }
@@ -119,8 +119,6 @@ extension QuotationViewController: QuotationViewContract {
                 values.append(ChartDataEntry(x: Double(value.x), y: value.y))
             }
         }
-        
-        
         
         let set = LineChartDataSet(entries: values, label: AppStrings.currency_btc_in_usd)
         
