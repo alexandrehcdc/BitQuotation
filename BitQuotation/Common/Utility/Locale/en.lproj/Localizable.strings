@@ -19,6 +19,7 @@
 "date.units.year"         = "year";
 "date.units.year.plural"  = "years";
 "currency.dollar.abbr"    = "USD";
+"date.units.week"         = "week";
 
 // Phrases
 "currency.btcinusd"       = "Bitcoin market value in USD";

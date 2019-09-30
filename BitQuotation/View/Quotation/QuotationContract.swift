@@ -5,7 +5,7 @@ protocol QuotationViewContract: class {
     func redraw(with period: TimeInDaysEnum)
     func startLoading()
     func endLoading()
-    func mountCard()
+    func mountCard(transaction: Transaction)
     func mountButtons(selected: TimeInMonthsEnum)
 }
 

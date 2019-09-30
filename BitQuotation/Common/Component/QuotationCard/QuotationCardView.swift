@@ -1,5 +1,4 @@
 
-
 import UIKit
 
 class QuotationCardView: UIView {
@@ -21,7 +20,37 @@ class QuotationCardView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setLayout() {
+    func setTransactionValues(transaction: Transaction) {
+        let quotations    = transaction.values.reversed()
+        let previousValue = Array(quotations)[1]
+        let currentValue  = quotations.first
+        let weekValues    = quotations.prefix(7)
+        let monthValues   = quotations.prefix(30)
+        
+        guard let dailyValue = currentValue else { return }
+        
+        var weekAmount  = 0.0
+        var monthAmount = 0.0
+        
+        for value in Array(weekValues) {
+            weekAmount += value.y
+        }
+        
+        for value in Array(monthValues) {
+            monthAmount += value.y
+        }
+        
+        let dailyQuotationPercentage = (dailyValue.y - previousValue.y) * 100 / previousValue.y
+        let weekQuotationPercentage  = (dailyValue.y - (weekAmount / Double(weekValues.count))) * 100 / previousValue.y
+        let monthQuotationPercentage = (dailyValue.y - (weekAmount / Double(weekValues.count))) * 100 / previousValue.y
+        
+        setValues(dailyValue: dailyValue.y,
+                  dailyPercentage: dailyQuotationPercentage,
+                  weekPercentage: weekQuotationPercentage,
+                  monthPercentage: monthQuotationPercentage)
+    }
+    
+    private func setLayout() {
         
         self.statusImageView         = UIImageView(frame: CGRect(x: 0, y: 0, width: self.frame.height/2, height: self.frame.height/2))
         self.dayValueLabel           = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: self.frame.height/2))
@@ -43,7 +72,7 @@ class QuotationCardView: UIView {
                                            monthDescLabel,
                                            monthValueLabel)
         
-        upperContainer.distribution = .fillProportionally
+        upperContainer.distribution = .equalCentering
         lowerContainer.distribution = .fillProportionally
         
         self.addSubviews(upperContainer, lowerContainer)
@@ -60,18 +89,27 @@ class QuotationCardView: UIView {
                               trailing: self.trailingAnchor,
                               padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
                               size: CGSize(width: self.frame.width, height: self.frame.height/2))
-        
-        setComponents()
     }
     
-    private func setComponents() {
-        self.statusImageView.backgroundColor = .yellow
-        self.dayValueLabel.backgroundColor = .green
-        self.dayValuePercentageLabel.backgroundColor = .white
-        self.weekDescLabel.backgroundColor = .purple
-        self.weekValueLabel.backgroundColor = .orange
-        self.monthDescLabel.backgroundColor = .cyan
-        self.monthValueLabel.backgroundColor = .black
+    private func setValues(dailyValue: Double, dailyPercentage: Double, weekPercentage: Double, monthPercentage: Double) {
+        
+        self.statusImageView.image       = UIImage.arrow.withRenderingMode(.alwaysTemplate)
+        self.statusImageView.contentMode = .scaleAspectFit
+        self.statusImageView.tintColor   = .green
+        
+        self.statusImageView.anchor(size: CGSize(width: self.frame.height/2,
+                                                 height: self.frame.height/2))
+        
+        self.dayValueLabel.text = String(format: "%.2f", dailyValue)
+        self.dayValuePercentageLabel.text = String(format: "%.2f", dailyPercentage)
+        self.weekDescLabel.text = AppStrings.date_units_week.capitalized
+        self.weekValueLabel.text = String(format: "%.2f", weekPercentage)
+        self.monthDescLabel.text = AppStrings.date_units_month.capitalized
+        self.monthValueLabel.text = String(format: "%.2f", monthPercentage)
+        
+        self.backgroundColor = .white
     }
+    
+//    private func style negative positive
     
 }

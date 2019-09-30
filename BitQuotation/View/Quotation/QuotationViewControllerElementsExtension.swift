@@ -43,7 +43,7 @@ extension QuotationViewController: QuotationViewContract {
             self.chartView?.legend.textColor        = .white
             
             self.mountButtons(selected: .year)
-            self.mountCard()
+            self.mountCard(transaction: transaction)
         }
     }
     
@@ -65,7 +65,7 @@ extension QuotationViewController: QuotationViewContract {
         UIApplication.shared.endIgnoringInteractionEvents()
     }
     
-    func mountCard() {
+    func mountCard(transaction: Transaction) {
         DispatchQueue.main.async { [unowned self] in
             self.cardView = QuotationCardView(frame: CGRect(x: 0,
                                                             y: 0,
@@ -79,6 +79,8 @@ extension QuotationViewController: QuotationViewContract {
                                  bottom: self.view.bottomAnchor,
                                  trailing: self.view.trailingAnchor,
                                  padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
+            
+            self.cardView.setTransactionValues(transaction: transaction)
         }
     }
     
@@ -108,10 +110,17 @@ extension QuotationViewController: QuotationViewContract {
     private func mountChartData(transaction: Transaction, period: Int) -> LineChartData {
         var values: [ChartDataEntry] = []
         
-        for (index,value) in transaction.values.enumerated() {
-            if index == (period - 1) { break }
-            values.append(ChartDataEntry(x: Double(value.x), y: value.y))
+        if period == 365 {
+            for value in transaction.values {
+                values.append(ChartDataEntry(x: Double(value.x), y: value.y))
+            }
+        } else {
+            for value in transaction.values.suffix(period) {
+                values.append(ChartDataEntry(x: Double(value.x), y: value.y))
+            }
         }
+        
+        
         
         let set = LineChartDataSet(entries: values, label: AppStrings.currency_btc_in_usd)
         

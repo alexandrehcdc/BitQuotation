@@ -25,6 +25,8 @@ struct AppStrings {
     static let date_units_year_plural  = localized("date.units.year.plural")
     static let currency_dollar_abbr    = localized("currency.dollar.abbr")
     static let currency_btc_in_usd     = localized("currency.btcinusd")
+    static let date_units_week         = localized("date.units.week")
+    
     
     public static func getLocalizedString(value: Any) -> String {
         if let value = value as? String {
